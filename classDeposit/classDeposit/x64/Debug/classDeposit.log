@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\HP\source\repos\classDeposit\classDeposit\main.cpp(64,12): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+  classDeposit.vcxproj -> C:\Users\HP\source\repos\classDeposit\x64\Debug\classDeposit.exe
