@@ -1,7 +1,6 @@
 #include<iostream>
 using namespace std;
 
-//1.	Реализовать класс Матрица.Перегрузить математические операции + , +=, -, -=, *, *=, перегрузить операции >> и << для ввода / вывода матрицы.
 
 class matrix
 {
@@ -25,8 +24,6 @@ public:
 	{
 		return **arr;
 	}  
-	
-
 	matrix operator+(const matrix& m2) const;
 	matrix operator +=(const matrix& m2);
 	matrix operator -(const matrix& m2);
@@ -52,19 +49,9 @@ private:
 
 int main()
 {
-	matrix m(3, 3);
-	m.setRandomMatrix();
-
-
-	matrix m2(m);
-
-	m2 *= m;
-
-	m2.getMatrix();
 
 	return 0;
 }
-
 
 matrix::matrix(const matrix& matrixCopy)
 {
@@ -158,7 +145,6 @@ matrix matrix::operator-=(const matrix& m2)
 		for (int j = 0; j < cols; j++)
 		{
 			this->arr[i][j] -= m2.arr[i][j];
-
 		}
 	}
 	return *this;
@@ -172,7 +158,6 @@ matrix matrix::operator*(const matrix& m2)
 		for (int j = 0; j < cols; j++)
 		{
 			temp.arr[i][j] = arr[i][j] * m2.arr[i][j];
-
 		}
 	}
 	return temp;
@@ -193,7 +178,6 @@ int matrix::operator[](int index)
 	return *arr[index];
 
 }
-
 ostream& operator<<(ostream& out, const matrix& m1)
 {
 	for (int i = 0; i < m1.rows; i++)
@@ -206,7 +190,6 @@ ostream& operator<<(ostream& out, const matrix& m1)
 	}
 	return out;
 }
-
 istream& operator>>(istream& input,const matrix& m1)
 {
 	for (int i = 0; i< m1.rows; i++)
