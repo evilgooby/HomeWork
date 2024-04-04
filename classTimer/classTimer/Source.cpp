@@ -1,11 +1,7 @@
 #include<iostream>
 #include<ctime>
 #include<ostream>
-
 using namespace std;
-
-//Реализовать класс Секундомер(Таймер).Объект класса должен хранить величины замеров времени.Должен быть метод запуск таймера(используем библиотеку time.h), 
-// остановки таймера, сохранения значения замера времени, сброс значений.Перегрузить << для вывода информации на экран.
 
 class Timer
 {
@@ -26,22 +22,14 @@ private:
 int main()
 {
 	setlocale(LC_ALL, "rus");
-
 	Timer t;
 	t.timerStartStop();
-
 	t.safe_time();
-
 	cout << t;
-
 	t.reset();
-
 	cout << t;
-
 	t.timerStartStop();
-
 	t.safe_time();
-
 	cout << t;
 	return 0;
 }
@@ -88,7 +76,6 @@ void Timer::safe_time()
 		delete [] result_safe2;
 		result_safe2 = result_safe;
 	}
-
 	if (!result_safe2)
 	{
 		double* result_safe2 = new double[SIZE];
@@ -99,20 +86,6 @@ void Timer::safe_time()
 		result_safe = result_safe2;
 	}
 	SIZE++;
-
-	//double* result_safe2 = new double [SIZE];
-	//for (int i = 0; i < SIZE-1; i++)
-	//	result_safe2[i] = result_safe[i];
-	//result_safe2[SIZE - 1] = result;
-	//delete []result_safe;
-	//result_safe = result_safe2;
-	//double* result_safe = new double[SIZE];
-	//for (int i = 0; i < SIZE; i++)
-	//	result_safe[i] = result_safe2[i];
-	//delete [] result_safe2;
-	//result_safe2 = result_safe;
-	//SIZE++;
-
 }
 
 void Timer::reset()

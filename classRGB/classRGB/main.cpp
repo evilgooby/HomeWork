@@ -1,11 +1,7 @@
 #include<iostream>
 #include<ostream>
 #include<istream>
-
 using namespace std;
-
-//	Реализовать класс Цвет(модель RGB).Данные – значение красного, зеленого и синего каналов.Методы: 
-//	проверка значения на корректность, перегрузка операций сравнения == , != , операций >> , << для ввода / вывода цвета.
 
 class RGB
 {
@@ -15,7 +11,6 @@ public:
 
 	bool correctRGB();
 	void setRGB(int R, int G, int B);
-
 	bool operator ==(const RGB& p);
 	bool operator != (const RGB& p);
 
@@ -26,17 +21,14 @@ private:
 	unsigned int R = 0;
 	unsigned int G = 0;
 	unsigned int B = 0;
-
 };
 
 int main()
 {
 	setlocale(LC_ALL, "rus");
-
 	RGB rgb(233, 123, 0);
 	RGB rgb2(233, 123, 0);
 	rgb.correctRGB();
-
 
 	return 0;
 }
@@ -55,7 +47,6 @@ istream& operator >> (istream& in, RGB& rgb)
 	in >> R >> G >> B;
 	rgb.setRGB(R, G, B);
 	return in; 
-
 }
 bool RGB::correctRGB()
 {
@@ -65,7 +56,6 @@ bool RGB::correctRGB()
 		return true;
 	}
 	cout << "Значения не корректны" << endl;
-
 	return false;
 }
 void RGB::setRGB(int R, int G, int B)

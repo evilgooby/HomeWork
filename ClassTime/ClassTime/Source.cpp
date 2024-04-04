@@ -2,11 +2,7 @@
 #include<iomanip>
 #include<ostream>
 #include<istream>
-
 using namespace std;
-
-//Реализовать класс Время.Объекты класса должны хранить значение времени(часы, минуты, секунды).Перегрузить операции сравнения(> , < , != , == ), арифметические операции(в частности + , +=, -, -=) и операции >> , << (для ввода / вывода).
-//Также должен быть реализован метод перевода времени из 24 - х часового формата в 12 - часовой.
 
 class Time
 {
@@ -28,7 +24,7 @@ public:
 		}
 		else
 		{
-			cout << "Данные введены не корректно" << endl;
+			cout << "The data was entered incorrectly" << endl;
 			this->hours = 00;
 			this->min = 00;
 			this->sec = 00;
@@ -44,7 +40,7 @@ public:
 		}
 		else
 		{
-			cout << "Данные введены не корректно" << endl;
+			cout << "The data was entered incorrectly" << endl;
 			this->hours = 00;
 			this->min = 00;
 			this->sec = 00;
@@ -60,7 +56,7 @@ public:
 		}
 		else
 		{
-			cout << "Данные введены не корректно" << endl;
+			cout << "The data was entered incorrectly" << endl;
 			this->hours = 00;
 			this->min = 00;
 			this->sec = 00;
@@ -89,13 +85,9 @@ public:
 			cin >> sec;
 
 			if (hours <= 23 && min <= 59 && sec <= 59)
-			{
 				i++;
-			}
 			else
-			{
-				cout << "Данные введены не корректно, попробуйте ещё раз" << endl;
-			}
+				cout << "The data was entered incorrectly" << endl;
 		}
 	}
 	void setInTime(int hours, int min, int sec)
@@ -111,7 +103,7 @@ public:
 			}
 			else
 			{
-				cout << "Данные введены не корректно, попробуйте ещё раз" << endl;
+				cout << "The data was entered incorrectly" << endl;
 				i++;
 			}
 		}
@@ -119,9 +111,7 @@ public:
 	void AmPm()
 	{
 		if (hours > 12)
-		{
 			hours -= 12;
-		}
 	}
 
 	bool operator > (const Time& t);
@@ -153,9 +143,7 @@ istream& operator >> (istream& in,Time& t)
 	unsigned int sec;
 	in >> hours >> min >> sec;
 	if (in)
-	{
 		t.setInTime(hours, min, sec);
-	}
 	return in;
 }
 
@@ -165,9 +153,7 @@ int main()
 	Time t(13, 23, 23);
 	Time t2(13, 23, 23);
 	cout << t;
-
 	t.AmPm();
-
 	cout << t;
 	return 0;
 }
@@ -175,34 +161,21 @@ int main()
 bool Time::operator > (const Time& t)
 {
 	if (hours > t.hours)
-	{
 		return true;
-	}
 	else if (min > t.min)
-	{
 		return true;
-	}
 	else if (sec > t.min)
-	{
 		return true;
-	}
 	return false;
 }
 bool Time::operator < (const Time& t)
 {
 	if (hours < t.hours)
-	{
 		return true;
-	}
 	else if (min < t.min)
-	{
 		return true;
-	}
 	else if (sec < t.min)
-	{
 		return true;
-	}
-
 	return false;
 }
 bool Time::operator != (const Time& t)

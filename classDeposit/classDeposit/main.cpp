@@ -1,11 +1,7 @@
 #include<iostream>
 #include<ostream>
 #include <cmath>
-
 using namespace std;
-
-//	Реализовать класс Вклад.Данные - процентная ставка, срок, возможность пополнения / снятия денег.Методы – пополнение / снятие денег(операции + , -), расчет дохода.Вывод реквизитов на экран(перегрузка операции << )
-
 class Deposit
 {
 public:
@@ -17,7 +13,7 @@ public:
 	void skolko_zarabotayu();
 	friend ostream& operator << (ostream& os, const Deposit& d);
 private:
-	float interesеRate = 10;		// процентная ставка в год
+	float interesеRate = 10;
 	int month = 0;
 	float money = 0;
 };
